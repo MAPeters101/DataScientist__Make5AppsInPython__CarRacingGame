@@ -54,9 +54,31 @@ def Entry_Screen():
 
         Just_In.Blit_Image(Bugatti,175,200)
 
-        Interative(250,450,20,green,l_green,"Start!")
-        Interative(400,450,20,yellow,l_yellow,"Ready!")
-        Interative(550,450,20,red,l_red,"Quit!")
+        Interactive(250,450,20,green,l_green,"Start!")
+        Interactive(400,450,20,yellow,l_yellow,"Ready!")
+        Interactive(550,450,20,red,l_red,"Quit!")
+
+mousex,mousey = 0,0
+clickx,clicky = 0,0
+MouseClicked = False
+
+def Interactive(centerx,centery,radius,icolor,acolor,message):
+    global mousex,mousey
+    global clickx,clicky
+    global MouseClicked
+
+    for event in pygame.event.get():
+        if event.type==MOUSEMOTION:
+            mousex,mousey=event.pos
+        elif event.type == MOUSEBUTTONDOWN:
+            clickx,clicky = event.pos
+            MouseClicked=True
+        elif event.type == MOUSEBUTTONUP:
+            clickx,clicky = event.pos
+            MouseClicked=True
+
+
+
 
 def display_message(text,size,x,y,color):
     TextObj = pygame.font.Font("font.ttf",size)

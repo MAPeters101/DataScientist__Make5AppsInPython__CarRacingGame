@@ -54,8 +54,16 @@ def Entry_Screen():
 
         Just_In.Blit_Image(Bugatti,175,200)
 
+        Interative(250,450,20,green,l_green,"Start!")
+        Interative(400,450,20,yellow,l_yellow,"Ready!")
+        Interative(550,450,20,red,l_red,"Quit!")
 
-
-
+def display_message(text,size,x,y,color):
+    TextObj = pygame.font.Font("font.ttf",size)
+    TextSurf = TextObj.render(text,True,color)
+    RectSurf = TextSurf.get_rect()
+    RectSurf.center=(x,y)
+    Display.blit(TextSurf,RectSurf)
+    pygame.display.update()
 
 

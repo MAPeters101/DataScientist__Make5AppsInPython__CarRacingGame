@@ -85,8 +85,29 @@ def Interactive(centerx,centery,radius,icolor,acolor,message):
         Just_In.light(centerx,centery,radius,acolor)
         display_message(message,20,centerx,centery+50,black)
 
-        if clickx>230 and clicky<(230+40) and clciky>430 and clciky<(430+40) and MouseClicked==True:
+        if clickx>230 and clicky<(230+40) and clicky>430 and clicky<(430+40) and MouseClicked==True:
             MouseClicked=False
+            global life
+            global GamePaused
+            if life==-1:
+                life=2
+                Enter_Game()
+                main()
+            elif GamePaused == True:
+                GamePaused=False
+                pygame.mixer.music.unpause()
+            else:
+                Enter_Game()
+                main()
+        elif clickx>530 and clicky<(530+40) and clicky>430 and clicky(430+40) and MouseClicked==True:
+            pygame.quit()
+            sys.exit()
+
+    else:
+        Just_In.lights(centerx,centery,radius,icolor)
+        display_message(message,20,centerx,centery+50,black)
+
+
 
 
 

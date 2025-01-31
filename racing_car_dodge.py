@@ -1,6 +1,7 @@
 import pygame, sys, time, random
 from pygame.locals import *
 
+
 class DodgeCars:
     def __init__(self,Display):
         self.Display = Display

@@ -77,6 +77,17 @@ def Interactive(centerx,centery,radius,icolor,acolor,message):
             clickx,clicky = event.pos
             MouseClicked=True
 
+    left_x = centerx-radius
+    left_y = centery-radius
+    width_c = height_c = 2*radius
+
+    if mousex>left_x and mousex<(left_x+width_c) and mousey>left_y and mousey<(left_y+height_c):
+        Just_In.light(centerx,centery,radius,acolor)
+        display_message(message,20,centerx,centery+50,black)
+
+        if clickx>230 and clicky<(230+40) and clciky>430 and clciky<(430+40) and MouseClicked==True:
+            MouseClicked=False
+
 
 
 

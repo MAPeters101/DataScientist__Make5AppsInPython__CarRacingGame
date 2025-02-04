@@ -16,4 +16,7 @@ class DodgeCars:
     def Blit_image(self,Image,x,y):
         self.Display.blit(Image,(x,y))
 
+    def lights(self, centerx, centery, radius, color):
+        pygame.draw.circle(self.Display, color,(centerx,centery),radius)
+
 
